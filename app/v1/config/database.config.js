@@ -11,20 +11,8 @@ const sequelize = new Sequelize(
     process.env.DB_USER_NAME,
     process.env.DB_PASSWORD, {
         host: process.env.DB_HOST_DEV,
-        dialect: "mysql",
-        logging: function () {
-        },
-        pool: {
-            max: 5,
-            min: 0,
-            idle: 10000
-        },
-        dialectOptions: {
-            socketPath: "/var/run/mysqld/mysqld.sock"
-        },
-        define: {
-            paranoid: true
-        }
-    });
+        dialect: process.env.DB_DIALECT
+    }
+);
 
 export default sequelize;
