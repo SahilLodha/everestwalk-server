@@ -5,7 +5,7 @@ import {User} from "../model/index.js";
 
 async function dbSyncService() {
     try {
-        User.sync().then(() => console.log("Table User has been updated as per Models Created."))
+        await User.sync({force: true});
     } catch (err) {
         throw new Error("Database Sync Failed")
     }

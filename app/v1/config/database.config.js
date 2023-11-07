@@ -1,7 +1,5 @@
 import {Sequelize} from 'sequelize'
 
-console.log(process.env.DB_DIALECT)
-
 /**
  * This is a Sequelize object created in order to reuse on various model and During database Connections and Migrations.
  *

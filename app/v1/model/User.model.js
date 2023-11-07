@@ -22,21 +22,37 @@ User.init({
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        isEmail: true
+        validate: {
+            isEmail: {
+                msg: "Not a valid Email."
+            }
+        },
+        unique: false
     },
     phone_number: {
         type: DataTypes.STRING,
-        allowNull: true,
-        len: [7, 15]
+        allowNull: false,
+        validate: {
+            len: [7, 15]
+        }
     },
     password: {
         type: DataTypes.STRING,
         allowNull: false,
-        len: [8, 20]
+        show: false
     }
 }, {
     sequelize,
-    modelName: 'User'
+    modelName: 'User',
+    timestamps: false,
+    defaultScope: {
+        attributes: { exclude: ['password'] },
+    },
+    scopes: {
+        emailPassword: {
+            attributes: { include: ['password', 'email']},
+        }
+    }
 });
 
 export default User;
