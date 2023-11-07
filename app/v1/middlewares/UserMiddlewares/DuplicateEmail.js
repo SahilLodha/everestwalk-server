@@ -1,4 +1,4 @@
-import User from "../../model/User.model.js";
+import User from "../../model/UserModel.js";
 
 /**
  * Duplicate Email Middleware ...
@@ -10,7 +10,6 @@ import User from "../../model/User.model.js";
  * @summary
  * This function throws error in case same email is registered into the user table.
  */
-
 const duplicateEmailMiddleware = async (req, res, next) => {
     try {
         const user = await User.findAll({where: {email: req.body.email}});
