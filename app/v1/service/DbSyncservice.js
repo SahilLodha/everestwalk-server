@@ -9,7 +9,7 @@ import {User} from "../model/index.js";
  * @summary
  * This function is created in order to create proper DB tables in accordance to the models defined.
  */
-async function dbSyncservice() {
+async function dbSyncService() {
     try {
         await User.sync({force: false});
     } catch (err) {
@@ -17,4 +17,4 @@ async function dbSyncservice() {
     }
 }
 
-export default dbSyncservice;
+export default dbSyncService;

@@ -1,8 +1,8 @@
 import app from "./server.js";
-import sequelize from './app/v1/config/DatabaseConfig.js';
+import {sequelize} from './app/v1/config/DatabaseConfig.js';
 
 // Importing Services
-import dbSyncservice from './app/v1/service/DbSyncservice.js';
+import dbSyncService from './app/v1/service/DbSyncService.js';
 
 // Importing Routes
 import UserRouter from "./app/v1/route/UserRoutes.js";
@@ -24,14 +24,13 @@ sequelize.authenticate().then(
     err => console.log("Database Connection Failed.")
 );
 
-
 /**
  * Syncing Tables ...
  *
  * @summary
- * Using the dbSyncservice created we can create the tables on the fly
+ * Using the dbSyncService created we can create the tables on the fly
  */
-dbSyncservice().then(() => console.log("DB Sync Process has been completed.\n------")).catch(err => console.log(err.message));
+dbSyncService().then(() => console.log("DB Sync Process has been completed.\n------")).catch(err => console.log(err.message));
 
 // JSON Middleware:     In order to access req.body in the Controllers ....
 app.use(express.json());

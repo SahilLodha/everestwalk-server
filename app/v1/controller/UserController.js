@@ -59,6 +59,16 @@ export const createUser =  async (req, res) => {
     }
 }
 
+/**
+ * Remove from DB
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ *
+ * @summary
+ * Responsible for removal of the data from database based on primary key in the params.
+ */
 export const removeUser = async (req, res) => {
     try{
         const user = await User.findByPk(req.params.id);
@@ -80,6 +90,16 @@ export const removeUser = async (req, res) => {
 
 }
 
+/**
+ * Edit User
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ *
+ * @summary
+ * Allows users to edit the user detail (single user) based on pk passed in req.params
+ */
 export const editUser = async (req, res) => {
     try {
         const user = await User.findByPk(req.params.id);
@@ -91,7 +111,7 @@ export const editUser = async (req, res) => {
             error: null
         });
     } catch (err) {
-        return res.status(500).json({
+        return res.status(400).json({
             success: false,
             message: "User cannot be edited.",
             data: null,
@@ -100,6 +120,16 @@ export const editUser = async (req, res) => {
     }
 }
 
+/**
+ * Get User
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ *
+ * @summary
+ * This function is responsible to fetch a single user based on the id passed in the param.
+ */
 export const getUser = async (req, res) => {
     try {
         const user = await User.findByPk(req.params.id)
@@ -110,7 +140,7 @@ export const getUser = async (req, res) => {
             error: null
         });
     } catch (err) {
-        return res.status(500).json({
+        return res.status(404).json({
             success: false,
             data: null,
             message: "User cannot be fetched.",
