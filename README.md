@@ -47,24 +47,24 @@ The app folder contains the various versions of the API created. Currently runni
 
 ### END POINTS defined 
 > User Create:
-> End Point: locahost:${PORT}/api/v1/user
-> Method: POST
-> 
-> User Update:
-> End Point: locahost:${PORT}/api/v1/user/${:id}
-> Method: PUT
+> End Point: locahost:${PORT}/api/v1/user  
+> Method: POST  
 >
-> User Delete:
-> End Point: locahost:${PORT}/api/v1/user/${:id}
-> Method: DELETE
+> User Update:  
+> End Point: locahost:${PORT}/api/v1/user/${:id}  
+> Method: PUT   
 >
-> User Fetch (All):
-> End Point: locahost:${PORT}/api/v1/user/${:id}
-> Method: GET
+> User Delete:  
+> End Point: locahost:${PORT}/api/v1/user/${:id}  
+> Method: DELETE  
 >
-> User Fetch (One):
-> End Point: locahost:${PORT}/api/v1/user/
-> Method: GET
+> User Fetch (All):  
+> End Point: locahost:${PORT}/api/v1/user/${:id}  
+> Method: GET  
+>
+> User Fetch (One):  
+> End Point: locahost:${PORT}/api/v1/user/  
+> Method: GET  
 
 Please look into the application accordingly.
 
