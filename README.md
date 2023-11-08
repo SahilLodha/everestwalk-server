@@ -46,7 +46,7 @@ Fill te env values for which you will need to create a mysql user and grant it p
 The app folder contains the various versions of the API created. Currently running ```v1``` and under the version directory all the major logic has been divided. I have used the ES6 import style during the develpement of the project.
 
 ### END POINTS defined 
-> User Create:
+> User Create:  
 > End Point: locahost:${PORT}/api/v1/user  
 > Method: POST  
 >
